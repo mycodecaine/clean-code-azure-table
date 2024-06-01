@@ -7,11 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Contract\Countries\" />
+    <Folder Include="Currency\Command\CreateCurrency\" />
+    <Folder Include="Currency\Command\DeleteCurrency\" />
+    <Folder Include="Currency\Command\UpdateCurrency\" />
+    <Folder Include="Countries\Commands\DeleteCountry\" />
+    <Folder Include="Countries\Commands\UpdateCountry\" />
+    <Folder Include="Countries\Queries\GetCountryByCode\" />
+    <Folder Include="Countries\Queries\GetCountryByContinent\" />
+    <Folder Include="Currency\Query\GetCurrencyByCode\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="11.9.1" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
   </ItemGroup>
 
   <ItemGroup>

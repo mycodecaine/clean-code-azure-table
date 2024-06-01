@@ -10,4 +10,8 @@
     <PackageReference Include="Azure.Data.Tables" Version="12.8.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ValueObjects\" />
+  </ItemGroup>
+
 </Project>
