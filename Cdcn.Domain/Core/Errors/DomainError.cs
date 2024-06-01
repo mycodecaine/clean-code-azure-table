@@ -1,6 +1,16 @@
-﻿namespace Cdcn.Domain.Core.Errors
+﻿using Cdcn.Domain.Core.Primitives;
+
+namespace Cdcn.Domain.Core.Errors
 {
-    public class DomainError
+    public static class DomainError
     {
+        public static class General
+        {
+            public static Error UnProcessableRequest => new Error(
+                "General.UnProcessableRequest",
+                "The server could not process the request.");
+
+            public static Error ServerError => new Error("General.ServerError", "The server encountered an unrecoverable error.");
+        }
     }
 }

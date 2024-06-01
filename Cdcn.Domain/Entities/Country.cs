@@ -1,6 +1,7 @@
 ﻿using Azure.Data.Tables;
 using Cdcn.Domain.Core.Primitives;
 using Cdcn.Domain.Enumerations;
+using Cdcn.Domain.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +43,7 @@ namespace Cdcn.Domain.Entities
         public double Area { get; set; }
         public Continent Continent { get; set; }
         public Guid CurrencyId { get; set; }
+
         public string OfficialLanguage { get; set; }
 
         // Use IReadOnlyList for collections to ensure immutability
@@ -59,6 +61,11 @@ namespace Cdcn.Domain.Entities
 
             var timeZones = new List<WorldTimeZone>(WorldTimeZones) { worldTimeZone };
             WorldTimeZones = timeZones.AsReadOnly();
+        }
+
+        public  Task<Currency> GetCurrency(Guid currencyId, ICurrencyRepository currencyRepository)
+        {
+            return currencyRepository.GetByIdAsync(currencyId);
         }
     }
 }
