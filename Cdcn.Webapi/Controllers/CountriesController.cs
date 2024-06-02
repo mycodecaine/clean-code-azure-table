@@ -12,9 +12,9 @@ namespace Cdcn.Webapi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CountryController : BaseController
+    public class CountriesController : BaseController
     {
-        protected CountryController(IMediator mediator) : base(mediator)
+        protected CountriesController(IMediator mediator) : base(mediator)
         {
         }
 

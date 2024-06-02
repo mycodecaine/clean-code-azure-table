@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Currency\Command\CreateCurrency\" />
     <Folder Include="Currency\Command\DeleteCurrency\" />
     <Folder Include="Currency\Command\UpdateCurrency\" />
     <Folder Include="Countries\Commands\DeleteCountry\" />
