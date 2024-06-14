@@ -8,9 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cdcn.Application.Currencies.Command.CreateCurrency
+namespace Cdcn.Application.UseCases.Currencies.Command.CreateCurrency
 {
-    
+
     public record CreateCurrencyCommand(string code, string name, string symbol) : IRequest<Result<IdResponse>>;
 
 }

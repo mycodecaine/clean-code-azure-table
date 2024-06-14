@@ -2,7 +2,7 @@
 
 namespace Cdcn.Domain.Core.Errors
 {
-    public static class DomainError
+    public static class DomainErrors
     {
         public static class General
         {

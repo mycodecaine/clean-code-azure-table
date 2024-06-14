@@ -7,13 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Currency\Command\DeleteCurrency\" />
-    <Folder Include="Currency\Command\UpdateCurrency\" />
-    <Folder Include="Countries\Commands\DeleteCountry\" />
-    <Folder Include="Countries\Commands\UpdateCountry\" />
-    <Folder Include="Countries\Queries\GetCountryByCode\" />
-    <Folder Include="Countries\Queries\GetCountryByContinent\" />
-    <Folder Include="Currency\Query\GetCurrencyByCode\" />
+    <Folder Include="UseCases\Currencies\Command\DeleteCurrency\" />
+    <Folder Include="UseCases\Currencies\Command\UpdateCurrency\" />
+    <Folder Include="UseCases\Countries\Commands\DeleteCountry\" />
+    <Folder Include="UseCases\Countries\Commands\UpdateCountry\" />
+    <Folder Include="UseCases\Countries\Queries\GetCountryByCode\" />
+    <Folder Include="UseCases\Countries\Queries\GetCountryByContinent\" />
+    <Folder Include="UseCases\Currencies\Query\GetCurrencyByCode\" />
   </ItemGroup>
 
   <ItemGroup>

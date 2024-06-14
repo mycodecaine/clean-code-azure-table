@@ -5,26 +5,28 @@ VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{0A1DAD7E-D999-4D70-9140-FA5B3D173D66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cdcn.Application", "Cdcn.Application\Cdcn.Application.csproj", "{EA31679A-F72C-4803-8D13-3EC89CE959DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cdcn.Application", "Cdcn.Application\Cdcn.Application.csproj", "{EA31679A-F72C-4803-8D13-3EC89CE959DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cdcn.Infrastructure", "Cdcn.Infrastructure\Cdcn.Infrastructure.csproj", "{4B7FF805-C7DC-44EF-BA27-90CDD6770229}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cdcn.Infrastructure", "Cdcn.Infrastructure\Cdcn.Infrastructure.csproj", "{4B7FF805-C7DC-44EF-BA27-90CDD6770229}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{964FF599-D553-46C3-BC46-9A0E1FFA07C5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{090D84E4-1354-4576-B403-5ACB051BA73C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cdcn.Webapi", "Cdcn.Webapi\Cdcn.Webapi.csproj", "{4626676D-F4E5-47F3-A6D9-E50A7F648B00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cdcn.Webapi", "Cdcn.Webapi\Cdcn.Webapi.csproj", "{4626676D-F4E5-47F3-A6D9-E50A7F648B00}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{FB78B494-E2ED-4418-A282-2B0ACD4042FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cdcn.Application.Tests", "Cdcn.Application.Tests\Cdcn.Application.Tests.csproj", "{22FB67CD-1D72-4AB9-A674-CC0F0A54FF11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cdcn.Application.Tests", "Cdcn.Application.Tests\Cdcn.Application.Tests.csproj", "{22FB67CD-1D72-4AB9-A674-CC0F0A54FF11}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{936846D3-F37C-40BD-BEB4-0886DCC63CCC}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cdcn.Domain", "Cdcn.Domain\Cdcn.Domain.csproj", "{BD76AEA9-A9E8-49AF-A3F4-2500CF8D376E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cdcn.Domain", "Cdcn.Domain\Cdcn.Domain.csproj", "{BD76AEA9-A9E8-49AF-A3F4-2500CF8D376E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cdcn.Domain.Tests", "Cdcn.Domain.Tests\Cdcn.Domain.Tests.csproj", "{8E85F4F7-C90B-45AC-AC66-23087C832093}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,6 +54,10 @@ Global
 		{BD76AEA9-A9E8-49AF-A3F4-2500CF8D376E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD76AEA9-A9E8-49AF-A3F4-2500CF8D376E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD76AEA9-A9E8-49AF-A3F4-2500CF8D376E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E85F4F7-C90B-45AC-AC66-23087C832093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E85F4F7-C90B-45AC-AC66-23087C832093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E85F4F7-C90B-45AC-AC66-23087C832093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E85F4F7-C90B-45AC-AC66-23087C832093}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +70,7 @@ Global
 		{4626676D-F4E5-47F3-A6D9-E50A7F648B00} = {0A1DAD7E-D999-4D70-9140-FA5B3D173D66}
 		{22FB67CD-1D72-4AB9-A674-CC0F0A54FF11} = {FB78B494-E2ED-4418-A282-2B0ACD4042FA}
 		{BD76AEA9-A9E8-49AF-A3F4-2500CF8D376E} = {964FF599-D553-46C3-BC46-9A0E1FFA07C5}
+		{8E85F4F7-C90B-45AC-AC66-23087C832093} = {FB78B494-E2ED-4418-A282-2B0ACD4042FA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F4E2ED94-FAF2-4C36-893F-8A6524600589}

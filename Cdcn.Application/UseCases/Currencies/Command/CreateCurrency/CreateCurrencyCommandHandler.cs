@@ -1,21 +1,14 @@
 ﻿using Cdcn.Application.Contract;
-using Cdcn.Application.Countries.Commands.CreateCountry;
-using Cdcn.Application.Currencies.Command.CreateCurrency;
 using Cdcn.Domain.Core.Primitives.Result;
 using Cdcn.Domain.Entities;
 using Cdcn.Domain.Repositories;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Cdcn.Application.Currencies.Command.CreateCurrency
+namespace Cdcn.Application.UseCases.Currencies.Command.CreateCurrency
 {
-    
 
-    public  class CreateCurrencyCommandHandler : IRequestHandler<CreateCurrencyCommand, Result<IdResponse>>
+
+    public class CreateCurrencyCommandHandler : IRequestHandler<CreateCurrencyCommand, Result<IdResponse>>
     {
         protected readonly ICurrencyRepository _currencyRepository;
 
@@ -31,7 +24,7 @@ namespace Cdcn.Application.Currencies.Command.CreateCurrency
             await _currencyRepository.Insert(currency);
 
             return Result.Success(new IdResponse(currency.Id));
-           
+
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cdcn.Application.Countries.Commands.CreateCountry
+namespace Cdcn.Application.UseCases.Countries.Commands.CreateCountry
 {
     public sealed class CreateCountryCommandHandler : IRequestHandler<CreateCountryCommand, Result<IdResponse>>
     {
