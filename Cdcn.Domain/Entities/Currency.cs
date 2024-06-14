@@ -14,7 +14,7 @@ namespace Cdcn.Domain.Entities
         {
             Ensure.NotEmpty(code, "The code  is required.", nameof(code));
             Ensure.NotEmpty(name, "The name  is required.", nameof(name));
-            Ensure.NotEmpty(symbol, "The name  is required.", nameof(symbol));
+            Ensure.NotEmpty(symbol, "The symbol  is required.", nameof(symbol));
             Code = code;
             Name = name;
             Symbol = symbol;
