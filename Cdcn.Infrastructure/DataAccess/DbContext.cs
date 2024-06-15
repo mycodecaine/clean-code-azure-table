@@ -1,4 +1,5 @@
 ﻿using Azure.Data.Tables;
+using Cdcn.Domain.Core.Data;
 using Cdcn.Infrastructure.DataAccess.Abstractions;
 using Cdcn.Infrastructure.DataAccess.Settings;
 using Microsoft.Extensions.Options;
@@ -26,6 +27,13 @@ namespace Cdcn.Infrastructure.DataAccess
             var tableClient = _tableServiceClient.GetTableClient(tableName);
             tableClient.CreateIfNotExists();
             return tableClient;
+
+           
+        }
+
+        public Task<IEnumerable<TEntity>> QueryAsync<TEntity>(TableClient tableclient, QueryFilter<TEntity> filter)
+        {
+            throw new NotImplementedException();
         }
     }
 }

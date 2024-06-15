@@ -12,5 +12,6 @@ namespace Cdcn.Domain.Repositories
 
     public interface ICurrencyRepository : IRepository<Currency>
     {
+        Task<bool> IsCodeUniqueAsync(string code);
     }
 }

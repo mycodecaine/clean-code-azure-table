@@ -36,7 +36,7 @@ namespace Cdcn.Domain.Entities
 
 
         // Properties
-        public string Name { get; set; }
+        public string Name { get; set ; }
         public string Code { get; set; }
         public string Capital { get; set; }
         public int Population { get; set; }
@@ -47,7 +47,7 @@ namespace Cdcn.Domain.Entities
         public string OfficialLanguage { get; set; }
 
         // Use IReadOnlyList for collections to ensure immutability
-        public IReadOnlyList<WorldTimeZone> WorldTimeZones { get; private set; } = new List<WorldTimeZone>();
+        public IReadOnlyList<TimeZoneInfo> WorldTimeZones { get; private set; } = new List<TimeZoneInfo>();
 
         public decimal GDP { get; set; }
         public string CallingCode { get; set; }
@@ -55,11 +55,11 @@ namespace Cdcn.Domain.Entities
         public string FlagURL { get; set; }
 
         // Method to add a WorldTimeZone, ensuring the collection is immutable externally
-        public void AddWorldTimeZone(WorldTimeZone worldTimeZone)
+        public void AddWorldTimeZone(TimeZoneInfo worldTimeZone)
         {
             if (worldTimeZone == null) throw new ArgumentNullException(nameof(worldTimeZone));
 
-            var timeZones = new List<WorldTimeZone>(WorldTimeZones) { worldTimeZone };
+            var timeZones = new List<TimeZoneInfo>(WorldTimeZones) { worldTimeZone };
             WorldTimeZones = timeZones.AsReadOnly();
         }
 

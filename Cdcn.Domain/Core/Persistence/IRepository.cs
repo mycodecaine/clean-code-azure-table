@@ -12,9 +12,10 @@ namespace Cdcn.Domain.Core.Persistence
         Task Insert(TEntity entity);
         Task Update(TEntity entity);
         Task Remove(TEntity entity);
-        Task Delete(Guid id);
-
+        Task Delete(Guid id);       
         Task<IEnumerable<TEntity>> QueryAsync(QueryFilter<TEntity> filter);
+
+        Task<bool> IsUniqeAsync(QueryFilter<TEntity> filter);
 
     }
 }

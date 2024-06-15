@@ -20,6 +20,11 @@ namespace Cdcn.Domain.Entities
             Symbol = symbol;
         }
 
+        public Currency() : base(nameof(Currency))
+        {
+
+        }
+
         public string Code { get; set; }
         public string Name { get; set; }
         public string Symbol { get; set; }
