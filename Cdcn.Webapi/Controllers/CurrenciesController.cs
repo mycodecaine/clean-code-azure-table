@@ -8,6 +8,8 @@ using Cdcn.Application.Contract.Currencies;
 using Cdcn.Application.UseCases.Currencies.Command.CreateCurrency;
 using Cdcn.Application.UseCases.Currencies.Command.DeleteCurrency;
 using Cdcn.Application.UseCases.Currencies.Command.DeleteCurrency.Contracts;
+using Cdcn.Application.UseCases.Currencies.Command.UpdateCurrency.Contracts;
+using Cdcn.Application.UseCases.Currencies.Command.UpdateCurrency;
 
 namespace Cdcn.Webapi.Controllers
 {
@@ -19,6 +21,7 @@ namespace Cdcn.Webapi.Controllers
         {
         }
 
+
         [HttpPost(ApiRoutes.Currencies.Create)]
         [ProducesResponseType(typeof(IdResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiErrorResponse), StatusCodes.Status400BadRequest)]
@@ -27,6 +30,15 @@ namespace Cdcn.Webapi.Controllers
               .Map(request => new CreateCurrencyCommand(createCurrencyRequest.Code, createCurrencyRequest.Name,createCurrencyRequest.Symbol ))
               .Bind(command => Mediator.Send(command))
               .Match(Ok, BadRequest);
+
+        [HttpPut(ApiRoutes.Currencies.Update)]
+        [ProducesResponseType(typeof(IdResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ApiErrorResponse), StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> Update([FromBody] UpdateCurrencyRequest request) =>
+         await Result.Create(request, DomainErrors.General.UnProcessableRequest)
+             .Map(request => new UpdateCurrencyCommand(request))
+             .Bind(command => Mediator.Send(command))
+             .Match(Ok, BadRequest);
 
         [HttpDelete(ApiRoutes.Currencies.Delete)]
         [ProducesResponseType( StatusCodes.Status200OK)]

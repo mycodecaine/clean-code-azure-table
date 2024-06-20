@@ -17,7 +17,7 @@
         {
             public const string Create = "";
             public const string Delete = "";
-            public const string Update = "{currencyId:guid}";
+            public const string Update = "";
             public const string GetById = "{currencyId:guid}";
 
 
