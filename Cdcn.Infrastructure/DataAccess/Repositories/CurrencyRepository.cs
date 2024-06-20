@@ -19,14 +19,25 @@ namespace Cdcn.Infrastructure.DataAccess.Repositories
 
         }
 
+        public async Task<Currency?> GetByCode(string code)
+        {
+            var filter = new QueryFilter<Currency>();
+            filter.Add(x => x.Code == code);
+            filter.Add(x => x.PartitionKey == nameof(Currency));
+
+            var data = await base.QueryAsync(filter);
+            return data?.FirstOrDefault();
+
+        }
+
         public async Task<bool> IsCodeUniqueAsync(string code)
         {
             var filter = new QueryFilter<Currency>();
-            filter.Add(x => x.Code== code);
+            filter.Add(x => x.Code == code);
             filter.Add(x => x.PartitionKey == nameof(Currency));
 
             return await base.IsUniqeAsync(filter);
-           
+
 
         }
 

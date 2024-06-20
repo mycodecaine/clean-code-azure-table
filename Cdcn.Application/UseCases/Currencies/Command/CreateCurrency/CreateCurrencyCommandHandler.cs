@@ -24,7 +24,7 @@ namespace Cdcn.Application.UseCases.Currencies.Command.CreateCurrency
 
             //Check duplicate
             if(!await _currencyRepository.IsCodeUniqueAsync(request.code.ToUpper())){
-                return Result.Failure<IdResponse>(DomainErrors.CourtCase.DuplicateCode);
+                return Result.Failure<IdResponse>(DomainErrors.Currency.DuplicateCode);
             }
 
             await _currencyRepository.Insert(currency);

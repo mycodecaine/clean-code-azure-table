@@ -16,6 +16,7 @@
         public static class Currencies
         {
             public const string Create = "";
+            public const string Delete = "";
             public const string Update = "{currencyId:guid}";
             public const string GetById = "{currencyId:guid}";
 
