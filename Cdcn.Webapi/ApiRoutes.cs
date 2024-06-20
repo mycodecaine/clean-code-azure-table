@@ -7,7 +7,7 @@
             public const string Create = "";
             public const string Update = "{countryId:guid}";
             public const string GetById = "{countryId:guid}";
-            public const string GetByCode = "{code:string}";
+            public const string GetByCode = "{code}";
             public const string Delete = "{countryId:guid}";
 
 
@@ -18,7 +18,7 @@
             public const string Create = "";
             public const string Delete = "";
             public const string Update = "";
-            public const string GetById = "{currencyId:guid}";
+            public const string GetByCode = "/Code/{code}";
 
 
         }

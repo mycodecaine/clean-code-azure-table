@@ -10,6 +10,9 @@ using Cdcn.Application.UseCases.Currencies.Command.DeleteCurrency;
 using Cdcn.Application.UseCases.Currencies.Command.DeleteCurrency.Contracts;
 using Cdcn.Application.UseCases.Currencies.Command.UpdateCurrency.Contracts;
 using Cdcn.Application.UseCases.Currencies.Command.UpdateCurrency;
+using Cdcn.Domain.Core.Primitives.Maybe;
+using Cdcn.Application.Contract.Dto;
+using Cdcn.Application.UseCases.Currencies.Query.GetCurrencyByCode;
 
 namespace Cdcn.Webapi.Controllers
 {
@@ -48,5 +51,14 @@ namespace Cdcn.Webapi.Controllers
               .Map(request => new DeleteCurrencyCommand(request.Code))
               .Bind(command => Mediator.Send(command))
               .Match(Ok, BadRequest);
+
+        [HttpGet(ApiRoutes.Currencies.GetByCode)]
+        [ProducesResponseType(typeof(Currency), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]        
+        public async Task<IActionResult> GetByCode(string code) =>
+           await Maybe<GetCurrencyByCodeQuery>
+               .From(new GetCurrencyByCodeQuery(code))
+               .Bind(query => Mediator.Send(query))
+               .Match(Ok, NotFound);
     }
 }
