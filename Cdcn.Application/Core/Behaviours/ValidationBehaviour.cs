@@ -1,11 +1,6 @@
 ﻿using FluentValidation.Results;
 using FluentValidation;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Cdcn.Application.Core.Behaviours
 {
@@ -24,7 +19,6 @@ namespace Cdcn.Application.Core.Behaviours
         /// <inheritdoc />
         public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
         {
-           
             var context = new ValidationContext<TRequest>(request);
 
             List<ValidationFailure> failures = _validators
@@ -40,7 +34,5 @@ namespace Cdcn.Application.Core.Behaviours
 
             return await next();
         }
-
-
     }
 }

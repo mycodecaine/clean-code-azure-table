@@ -21,14 +21,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cdcn.Application.Tests", "C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{936846D3-F37C-40BD-BEB4-0886DCC63CCC}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cdcn.Domain", "Cdcn.Domain\Cdcn.Domain.csproj", "{BD76AEA9-A9E8-49AF-A3F4-2500CF8D376E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cdcn.Domain.Tests", "Cdcn.Domain.Tests\Cdcn.Domain.Tests.csproj", "{8E85F4F7-C90B-45AC-AC66-23087C832093}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cdcn.Domain.Tests", "Cdcn.Domain.Tests\Cdcn.Domain.Tests.csproj", "{8E85F4F7-C90B-45AC-AC66-23087C832093}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cdcn.Infrastructure.Tests", "Cdcn.Infrastructure.Tests\Cdcn.Infrastructure.Tests.csproj", "{89984BB4-4E1B-42AD-BFBE-01E3978E5529}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cdcn.Infrastructure.Tests", "Cdcn.Infrastructure.Tests\Cdcn.Infrastructure.Tests.csproj", "{89984BB4-4E1B-42AD-BFBE-01E3978E5529}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

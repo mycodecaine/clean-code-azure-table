@@ -36,9 +36,11 @@ namespace Cdcn.Domain.Core.Primitives.Maybe
         /// <summary>
         /// Gets the default empty instance.
         /// </summary>
+#pragma warning disable CS8604 // Possible null reference argument.
         public static Maybe<T> None => new Maybe<T>(default);
+#pragma warning restore CS8604 // Possible null reference argument.
 
-      
+
         /// <summary>
         /// Creates a new <see cref="Maybe{T}"/> instance based on the specified value.
         /// </summary>

@@ -1,11 +1,11 @@
-﻿using Cdcn.Application.Contract;
-using Cdcn.Domain.Core.Primitives.Result;
-using MediatR;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Cdcn.Application.Contract;
+using Cdcn.Domain.Core.Primitives.Result;
+using MediatR;
 
 namespace Cdcn.Application.UseCases.Countries.Commands.CreateCountry
 {

@@ -1,10 +1,10 @@
-﻿using Cdcn.Domain.Core.Primitives;
-using FluentValidation;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Cdcn.Domain.Core.Primitives;
+using FluentValidation;
 
 namespace Cdcn.Application.Core.Extentions
 {

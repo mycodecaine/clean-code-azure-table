@@ -28,9 +28,8 @@ namespace Cdcn.Infrastructure.DataAccess.Repositories.Base
 
             _tableClient = _context.GetTableClient(_tableName);
         }
-        public async Task<TEntity> GetByIdAsync(Guid id)
+        public async Task<TEntity?> GetByIdAsync(Guid id)
         {
-
 
             // Scan the table for the entity with the specified Id
             var entities = _tableClient.QueryAsync<TEntity>(entity => entity.RowKey == id.ToString() && entity.PartitionKey == _tableName);

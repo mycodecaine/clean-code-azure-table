@@ -82,10 +82,7 @@ namespace Cdcn.Domain.Core.Data
                 this.to = to;
             }
 
-            public override Expression Visit(Expression node)
-            {
-                return node == from ? to : base.Visit(node);
-            }
+            public override Expression Visit(Expression node) => node == from ? to : base.Visit(node);
         }
     }
 }

@@ -23,9 +23,9 @@ namespace Cdcn.Domain.Entities.Tests
             var currency = new Currency(code, name, symbol);
 
             // Assert
-            Assert.AreEqual(code, currency.Code);
-            Assert.AreEqual(name, currency.Name);
-            Assert.AreEqual(symbol, currency.Symbol);
+            Assert.That(currency.Code, Is.EqualTo(code));
+            Assert.That(currency.Name, Is.EqualTo(name));
+            Assert.That(currency.Symbol, Is.EqualTo(symbol));
         }
 
         [Test]
@@ -38,7 +38,7 @@ namespace Cdcn.Domain.Entities.Tests
 
             // Act & Assert
             var ex = Assert.Throws<ArgumentException>(() => new Currency(code, name, symbol));
-            Assert.AreEqual("The code  is required. (Parameter 'code')", ex.Message);
+            Assert.That(ex.Message, Is.EqualTo("The code  is required. (Parameter 'code')"));
         }
 
         [Test]
@@ -51,7 +51,7 @@ namespace Cdcn.Domain.Entities.Tests
 
             // Act & Assert
             var ex = Assert.Throws<ArgumentException>(() => new Currency(code, name, symbol));
-            Assert.AreEqual("The symbol  is required. (Parameter 'symbol')", ex.Message);
+            Assert.That(ex.Message, Is.EqualTo("The symbol  is required. (Parameter 'symbol')"));
         }
     }
 }
