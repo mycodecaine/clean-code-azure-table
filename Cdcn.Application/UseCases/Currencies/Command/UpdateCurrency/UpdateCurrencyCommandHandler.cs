@@ -27,15 +27,15 @@ namespace Cdcn.Application.UseCases.Currencies.Command.UpdateCurrency
         {
             var currency = await _currencyRepository.GetByCode(request.request.Code.ToUpper());
 
-           
             if (currency == null)
             {
                 return Result.Failure<IdResponse>(DomainErrors.Currency.CurrencyNotExist);
             }
+
             currency.Code = request.request.Code;
             currency.Name = request.request.Name;
             currency.Symbol = request.request.Symbol;
-            await _currencyRepository.Update(currency);
+            await _currencyRepository.UpdateAsync(currency);
 
             return Result.Success(new IdResponse(currency.Id));
 

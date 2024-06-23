@@ -31,6 +31,7 @@ namespace Cdcn.Application.UseCases.Currencies.Command.DeleteCurrency
             }
 
             await _currencyRepository.Delete(currency.Id);
+            await _currencyRepository.CommitAsync();
 
             return Result.Success();
         }

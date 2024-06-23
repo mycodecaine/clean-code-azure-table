@@ -12,7 +12,7 @@ using Microsoft.Extensions.Options;
 namespace Cdcn.Infrastructure.DataAccess.Repositories
 {
 
-    public  class CurrencyRepository : TableRepository<Currency>, ICurrencyRepository
+    public  class CurrencyRepository : GenericRepository<Currency>, ICurrencyRepository
     {
         public CurrencyRepository(ITableContext context, IOptions<NoSqlDataAccessSetting> settings) : base(context, settings)
         {

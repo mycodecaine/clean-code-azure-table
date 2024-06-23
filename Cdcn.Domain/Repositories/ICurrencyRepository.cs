@@ -10,7 +10,7 @@ namespace Cdcn.Domain.Repositories
 {
     
 
-    public interface ICurrencyRepository : IRepository<Currency>
+    public interface ICurrencyRepository : IGenericRepository<Currency>
     {
         Task<bool> IsCodeUniqueAsync(string code);
         Task<Currency?> GetByCode(string code);

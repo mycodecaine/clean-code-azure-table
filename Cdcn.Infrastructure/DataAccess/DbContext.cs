@@ -1,5 +1,6 @@
 ﻿using Azure.Data.Tables;
 using Cdcn.Domain.Core.Data;
+using Cdcn.Domain.Core.Persistence;
 using Cdcn.Infrastructure.DataAccess.Abstractions;
 using Cdcn.Infrastructure.DataAccess.Settings;
 using Microsoft.Extensions.Options;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Cdcn.Infrastructure.DataAccess
 {
-    internal class DbContext : ITableContext
+    internal class DbContext : ITableContext, IUnitOfWork
     {
         private readonly NoSqlDataAccessSetting _noSqlDataAccessSetting;
         private readonly TableServiceClient _tableServiceClient;
@@ -20,6 +21,16 @@ namespace Cdcn.Infrastructure.DataAccess
         {
             _noSqlDataAccessSetting = noSqlDataAccessSetting.Value;
             _tableServiceClient = new TableServiceClient(_noSqlDataAccessSetting.ConnectionString);
+        }
+
+        public Task CommitAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Dispose()
+        {
+            
         }
 
         public TableClient GetTableClient(string tableName)
@@ -35,5 +46,7 @@ namespace Cdcn.Infrastructure.DataAccess
         {
             throw new NotImplementedException();
         }
+
+        
     }
 }

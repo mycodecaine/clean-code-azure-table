@@ -11,7 +11,7 @@ namespace Cdcn.Application.UseCases.Currencies.Command.CreateCurrency
 
     public class CreateCurrencyCommandHandler : IRequestHandler<CreateCurrencyCommand, Result<IdResponse>>
     {
-        protected readonly ICurrencyRepository _currencyRepository;
+        private readonly ICurrencyRepository _currencyRepository;
 
         public CreateCurrencyCommandHandler(ICurrencyRepository currencyRepository)
         {
@@ -22,12 +22,13 @@ namespace Cdcn.Application.UseCases.Currencies.Command.CreateCurrency
         {
             var currency = new Currency(request.code.ToUpper(), request.name, request.symbol);
 
-            //Check duplicate
-            if(!await _currencyRepository.IsCodeUniqueAsync(request.code.ToUpper())){
+            if (!await _currencyRepository.IsCodeUniqueAsync(request.code.ToUpper())){
                 return Result.Failure<IdResponse>(DomainErrors.Currency.DuplicateCode);
             }
 
-            await _currencyRepository.Insert(currency);
+            await _currencyRepository.InsertAsync(currency);
+
+            await _currencyRepository.CommitAsync();
 
             return Result.Success(new IdResponse(currency.Id));
 
