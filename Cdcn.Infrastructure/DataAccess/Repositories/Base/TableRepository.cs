@@ -76,12 +76,13 @@ namespace Cdcn.Infrastructure.DataAccess.Repositories.Base
            
         }
 
-        
+
 
         public async Task Delete(Guid id)
         {
             var entity = await GetByIdAsync(id);
-            await Remove(entity);
+            if (entity != null)
+                await Remove(entity);
         }
 
         public async Task<bool> IsUniqeAsync(QueryFilter<TEntity> filter)
